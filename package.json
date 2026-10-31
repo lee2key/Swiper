@@ -1,0 +1,26 @@
+{
+  "name": "swiper",
+  "version": "1.0.0",
+  "description": "A local Windows desktop app for ranking photos through head-to-head choices.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "package": "electron-builder --win portable"
+  },
+  "devDependencies": {
+    "electron": "^38.2.6",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.local.swiper",
+    "productName": "Swiper",
+    "icon": "build/icon.ico",
+    "asar": true,
+    "electronLanguages": [
+      "en-US"
+    ],
+    "win": {
+      "target": "portable"
+    }
+  }
+}

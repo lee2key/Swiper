@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Swiper</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header>
+        <div class="brand"><img class="brand-mark" src="logo.svg" alt=""><span>Swiper</span></div>
+        <div class="session-info" id="sessionInfo" hidden>
+          <span id="roundLabel">Round 1</span>
+          <span class="divider">•</span>
+          <span id="progressLabel">0 / 0 duels</span>
+        </div>
+        <label class="mode-picker" for="modeSelect">
+          <span>Mode</span>
+          <select id="modeSelect">
+            <option value="random" selected>Random</option>
+            <option value="winner">Winner</option>
+          </select>
+        </label>
+        <button class="folder-button" id="folderButton">Choose folder</button>
+      </header>
+
+      <section class="welcome" id="welcome">
+        <h1>Find your favorite photos</h1>
+        <p>Choose a folder, then pick the better photo in each pair. Your selections build a personal ranking as you go.</p>
+        <button class="primary-button" id="startButton">Choose a photo folder</button>
+      </section>
+
+      <section class="duel" id="duel" hidden>
+        <p class="instruction">Which one do you like more?</p>
+        <div class="photo-grid">
+          <div class="choice-column">
+            <div class="photo-card" id="leftChoice" role="button" tabindex="0" aria-label="Choose left photo">
+              <div class="media-stage" id="leftMedia"></div>
+            </div>
+            <button class="choose-button" id="leftSelect">Choose this photo</button>
+          </div>
+          <div class="or">OR</div>
+          <div class="choice-column">
+            <div class="photo-card" id="rightChoice" role="button" tabindex="0" aria-label="Choose right photo">
+              <div class="media-stage" id="rightMedia"></div>
+            </div>
+            <button class="choose-button" id="rightSelect">Choose this photo</button>
+          </div>
+        </div>
+        <p class="keyboard-help">Tip: use <kbd>←</kbd> and <kbd>→</kbd> to choose faster.</p>
+      </section>
+
+      <section class="results" id="results" hidden>
+        <div class="result-heading">
+          <p class="eyebrow">ROUND COMPLETE</p>
+          <h1 id="resultTitle">Your ranking is ready</h1>
+          <p id="resultMessage">Every photo has competed once. Start another lap to separate the favorites.</p>
+        </div>
+        <div class="ranking" id="ranking"></div>
+        <div class="result-actions">
+          <button class="secondary-button" id="renameButton">Rename files</button>
+          <button class="primary-button" id="nextRoundButton">Start next round</button>
+        </div>
+      </section>
+    </main>
+    <script src="renderer.js"></script>
+  </body>
+</html>
